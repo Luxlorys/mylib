@@ -18,7 +18,7 @@ export let books: Book[] = [
         name: 'Book-2',
         desctiption: 'description description description',
         priority: 2,
-        finished: false,
+        finished: true,
         date: new Date(),
     },
 ];
