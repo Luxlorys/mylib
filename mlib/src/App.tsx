@@ -4,6 +4,7 @@ import { initialBooks } from "./models/Book";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Footer from "./components/Footer";
+import "bootstrap/dist/css/bootstrap.css";
 
 
 export default function App() {
@@ -13,7 +14,7 @@ export default function App() {
     return (
         <div className="container">
             <Navbar setIsHome={setIsHome} />
-            {isHome ? <Home /> : <Finished />}
+            {isHome ? <Home books={books} /> : <Finished books={books} />}
             <Footer />
         </div>
     );

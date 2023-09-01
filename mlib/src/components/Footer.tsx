@@ -1,5 +1,8 @@
 export default function Footer() {
-    return (
-        <h3>Footer</h3>
-    );
+  return (
+    <div className="text-center">
+        
+        Footer
+    </div>
+  );
 }

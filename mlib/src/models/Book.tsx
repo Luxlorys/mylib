@@ -1,4 +1,5 @@
 export default interface Book {
+    id: number,
     title: string, 
     desctiption: string,
     priority: number,
@@ -9,6 +10,7 @@ export default interface Book {
 
 export let initialBooks: Book[] = [
     {
+        id: 1,
         title: 'Book-1',
         desctiption: 'description description description',
         priority: 1,
@@ -17,6 +19,7 @@ export let initialBooks: Book[] = [
         img: 'https://png.pngtree.com/png-vector/20190527/ourmid/pngtree-book-icon-png-image_1110447.jpg',
     },
     {
+        id: 2,
         title: 'Book-2',
         desctiption: 'description description description',
         priority: 2,
@@ -25,6 +28,7 @@ export let initialBooks: Book[] = [
         img: 'https://png.pngtree.com/png-vector/20190527/ourmid/pngtree-book-icon-png-image_1110447.jpg',
     },
     {
+        id: 3,
         title: 'Book-3',
         desctiption: 'description description description',
         priority: 1,
@@ -33,6 +37,7 @@ export let initialBooks: Book[] = [
         img: 'https://png.pngtree.com/png-vector/20190527/ourmid/pngtree-book-icon-png-image_1110447.jpg',
     },
     {
+        id: 4,
         title: 'Book-4',
         desctiption: 'description description description',
         priority: 2,
@@ -41,6 +46,7 @@ export let initialBooks: Book[] = [
         img: 'https://png.pngtree.com/png-vector/20190527/ourmid/pngtree-book-icon-png-image_1110447.jpg',
     },
     {
+        id: 5,
         title: 'Silent patient',
         desctiption: 'description description description',
         priority: 1,
