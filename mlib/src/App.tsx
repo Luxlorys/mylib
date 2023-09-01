@@ -1,21 +1,23 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { bookContext } from "./BookContext";
+
 import Finished from "./pages/Finished";
-import { initialBooks } from "./models/Book";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Footer from "./components/Footer";
+
 import "bootstrap/dist/css/bootstrap.css";
 
 
 export default function App() {
-    const [books, setBook] = useState(initialBooks);
-    const [isHome, setIsHome] = useState(true);
+    const books = useContext(bookContext);
 
     return (
         <div className="container">
-            <Navbar setIsHome={setIsHome} />
-            {isHome ? <Home books={books} /> : <Finished books={books} />}
-            <Footer />
+            <bookContext.Provider value={books}>
+                <Home /> 
+                <Finished />
+            </bookContext.Provider>
         </div>
     );
 }

@@ -2,7 +2,7 @@ import Book from "../models/Book";
 
 export default function BookCard({ book }: { book: Book }) {
   return (
-    <div className="card" key={book.id}>
+    <div className="card">
       <img
         className="card-img-top mx-auto"
         src={book.img}
