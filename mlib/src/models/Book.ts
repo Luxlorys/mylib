@@ -8,7 +8,7 @@ export default interface Book {
     img: string
 }
 
-export let initialBooks: Book[] = [
+export let initialBooks = [
     {
         id: 1,
         title: 'Book-1',
@@ -16,7 +16,7 @@ export let initialBooks: Book[] = [
         priority: 1,
         finished: true,
         date: new Date(),
-        img: 'https://png.pngtree.com/png-vector/20190527/ourmid/pngtree-book-icon-png-image_1110447.jpg',
+        img: 'https://content2.rozetka.com.ua/goods/images/big/232768606.jpg',
     },
     {
         id: 2,
@@ -25,7 +25,7 @@ export let initialBooks: Book[] = [
         priority: 2,
         finished: false,
         date: new Date(),
-        img: 'https://png.pngtree.com/png-vector/20190527/ourmid/pngtree-book-icon-png-image_1110447.jpg',
+        img: 'https://content2.rozetka.com.ua/goods/images/big/232768606.jpg',
     },
     {
         id: 3,
@@ -34,7 +34,7 @@ export let initialBooks: Book[] = [
         priority: 1,
         finished: true,
         date: new Date(),
-        img: 'https://png.pngtree.com/png-vector/20190527/ourmid/pngtree-book-icon-png-image_1110447.jpg',
+        img: 'https://content2.rozetka.com.ua/goods/images/big/232768606.jpg',
     },
     {
         id: 4,
@@ -43,7 +43,7 @@ export let initialBooks: Book[] = [
         priority: 2,
         finished: false,
         date: new Date(),
-        img: 'https://png.pngtree.com/png-vector/20190527/ourmid/pngtree-book-icon-png-image_1110447.jpg',
+        img: 'https://content2.rozetka.com.ua/goods/images/big/232768606.jpg',
     },
     {
         id: 5,

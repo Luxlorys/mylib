@@ -1,23 +1,25 @@
-import { useContext, useState } from "react";
-import { bookContext } from "./BookContext";
+import { useState } from "react";
+import { BookContext } from "./BookContext";
+import { ChakraProvider } from "@chakra-ui/react";
 
 import Finished from "./pages/Finished";
-import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
-import Footer from "./components/Footer";
 
 import "bootstrap/dist/css/bootstrap.css";
+import { initialBooks } from "./models/Book";
 
 
 export default function App() {
-    const books = useContext(bookContext);
+    const [booksState, setBook] = useState(initialBooks);
 
     return (
-        <div className="container">
-            <bookContext.Provider value={books}>
-                <Home /> 
-                <Finished />
-            </bookContext.Provider>
-        </div>
+        <ChakraProvider>
+            <div className="container">
+                <BookContext.Provider value={booksState}>
+                    <Home /> 
+                    <Finished />
+                </BookContext.Provider>
+            </div>
+        </ChakraProvider>
     );
 }

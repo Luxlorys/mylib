@@ -1,17 +1,17 @@
-import "bootstrap/dist/css/bootstrap.css";
-
-import BookCard from "../components/BookCard";
-
 import { useContext } from "react";
-import { bookContext } from "../BookContext";
-import Navbar from "../components/Navbar";
+import { BookContext } from "../BookContext";
 import Footer from "../components/Footer";
+import BookCardChakra from "../components/BookCardChakra";
+import { ChakraProvider } from "@chakra-ui/react";
+import Navbar from "../components/NavbarChakra";
+import "bootstrap/dist/css/bootstrap.css";
 
 
 export default function Finished() {
-  const booksContext = useContext(bookContext);
+  const booksContext = useContext(BookContext);
 
   return (
+    <ChakraProvider>
     <div className="container">
       <Navbar />
       <h1 className="text-center">Finished</h1>
@@ -19,10 +19,11 @@ export default function Finished() {
         {booksContext
           .filter((book) => book.finished)
           .map((book) => (
-            <BookCard book={book} key={book.id}/>
+            <BookCardChakra book={book} key={book.id}/>
           ))}
       </div>
       <Footer />
     </div>
+    </ChakraProvider>
   );
 }
