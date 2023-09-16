@@ -3,3 +3,6 @@ import { initialBooks } from "./models/Book";
 
 
 export const BookContext = createContext(initialBooks);
+
+export const BooksContext = createContext({});
+export const DispatcherContext = createContext({});

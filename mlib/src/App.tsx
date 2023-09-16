@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useReducer, useState } from "react";
 import { BookContext } from "./BookContext";
 import { ChakraProvider } from "@chakra-ui/react";
 
@@ -6,16 +6,40 @@ import Finished from "./pages/Finished";
 import Home from "./pages/Home";
 
 import "bootstrap/dist/css/bootstrap.css";
-import { initialBooks } from "./models/Book";
+import { Book, initialBooks } from "./models/Book";
+
+type Actions = 
+    | {type: 'added', payload: Book}
+    | {type: 'deleted', payload: number}
+
+type State = {
+    books: Book[]
+}
+
+function reducer(state: State, action: Actions) {
+    switch(action.type) {
+      case 'added':
+        return { ...state, books: [...state.books, action.payload] };
+      case 'deleted':
+        return { ...state, books: state.books.filter(book => book.id !== action.payload) };
+      default:
+        console.log('nothing');
+        return state;
+    }
+  }
 
 
 export default function App() {
-    const [booksState, setBook] = useState(initialBooks);
+    const initialBooksState = {
+        books: initialBooks
+    };
+
+    const [booksState, dispatcher] = useReducer(reducer, initialBooksState);
 
     return (
         <ChakraProvider>
             <div className="container">
-                <BookContext.Provider value={booksState}>
+                <BookContext.Provider value={booksState.books}>
                     <Home /> 
                     <Finished />
                 </BookContext.Provider>

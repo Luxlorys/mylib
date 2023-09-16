@@ -1,14 +1,14 @@
-export default interface Book {
-    id: number,
-    title: string, 
-    desctiption: string,
-    priority: number,
-    finished: boolean
-    date: Date,
-    img: string
+export type Book = {
+    id: number;
+    title: string;
+    desctiption: string;
+    priority: number;
+    finished: boolean;
+    date: Date;
+    img: string;
 }
 
-export let initialBooks = [
+export let initialBooks: Book[] = [
     {
         id: 1,
         title: 'Book-1',
