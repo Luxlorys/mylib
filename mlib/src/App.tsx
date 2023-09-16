@@ -1,5 +1,4 @@
 import { useReducer, useState } from "react";
-import { BookContext } from "./BookContext";
 import { ChakraProvider } from "@chakra-ui/react";
 
 import Finished from "./pages/Finished";
@@ -7,6 +6,7 @@ import Home from "./pages/Home";
 
 import "bootstrap/dist/css/bootstrap.css";
 import { Book, initialBooks } from "./models/Book";
+import { BookContext, BookDispatcherContext } from "./BookContext";
 
 type Actions = 
     | {type: 'added', payload: Book}
@@ -40,8 +40,10 @@ export default function App() {
         <ChakraProvider>
             <div className="container">
                 <BookContext.Provider value={booksState.books}>
-                    <Home /> 
-                    <Finished />
+                    <BookDispatcherContext.Provider value={dispatcher}>
+                        <Home /> 
+                        <Finished />
+                    </BookDispatcherContext.Provider>
                 </BookContext.Provider>
             </div>
         </ChakraProvider>

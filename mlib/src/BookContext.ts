@@ -2,7 +2,6 @@ import { createContext, useReducer } from "react";
 import { initialBooks } from "./models/Book";
 
 
-export const BookContext = createContext(initialBooks);
 
-export const BooksContext = createContext({});
-export const DispatcherContext = createContext({});
+export const BookContext = createContext({});
+export const BookDispatcherContext = createContext({});
