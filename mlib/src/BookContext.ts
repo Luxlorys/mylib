@@ -1,7 +1,5 @@
 import { createContext, useReducer } from "react";
-import { initialBooks } from "./models/Book";
+import { Book, initialBooks } from "./models/Book";
 
-
-
-export const BookContext = createContext({});
+export const BookContext = createContext<{ books: Book[] }>({ books: initialBooks });
 export const BookDispatcherContext = createContext({});

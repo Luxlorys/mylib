@@ -11,7 +11,7 @@ import {
   Text,
   Center,
 } from "@chakra-ui/react";
-import Book from "../models/Book";
+import { Book } from "../models/Book";
 import { useContext } from "react";
 import { BookContext } from "../BookContext";
 

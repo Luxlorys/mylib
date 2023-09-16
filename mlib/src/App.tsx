@@ -39,7 +39,7 @@ export default function App() {
     return (
         <ChakraProvider>
             <div className="container">
-                <BookContext.Provider value={booksState.books}>
+                <BookContext.Provider value={{ books: booksState.books}}>
                     <BookDispatcherContext.Provider value={dispatcher}>
                         <Home /> 
                         <Finished />
