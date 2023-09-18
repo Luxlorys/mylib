@@ -11,12 +11,19 @@ import {
   Text,
   Center,
 } from "@chakra-ui/react";
+
 import { Book } from "../models/Book";
 import { useContext } from "react";
-import { BookContext } from "../BookContext";
+import { BookDispatcherContext } from "../BookContext";
 
 export default function BookCardChakra({ book }: { book: Book }) {
-    const booksContext = useContext(BookContext);
+    const dispatcher = useContext(BookDispatcherContext);
+
+    const handleDeleteButton = (bookId: number) => {
+        console.log('clicked on id ' + book.id);
+        console.log(dispatcher);
+        dispatcher({type: 'deleted', payload: bookId});
+    }
 
     return (
     <Card maxW="300px">
@@ -37,12 +44,8 @@ export default function BookCardChakra({ book }: { book: Book }) {
         <Divider />
         <CardFooter>
         <ButtonGroup spacing="2">
-            <Button variant="solid" colorScheme="blue">
-            Show more
-            </Button>
-            <Button variant="ghost" colorScheme="blue">
-            Delete
-            </Button>
+            <Button variant="solid" colorScheme="blue"> Show more </Button>
+            <Button variant="ghost" colorScheme="blue" onClick={() => handleDeleteButton(book.id)}> Delete</Button>
         </ButtonGroup>
         </CardFooter>
     </Card>

@@ -10,7 +10,6 @@ import { Book } from "../models/Book";
 
 export default function Finished() {
   const books = useContext(BookContext).books;
-
   return (
     <ChakraProvider>
     <div className="container">
