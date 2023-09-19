@@ -24,12 +24,7 @@ export default function BookCard({book}: Props) {
     const dispatch = useDispatcher();
     
     const handleDeleteButton = (bookId: number) => {
-        console.log('clicked on id ' + bookId);    
-        console.log(dispatch);
-        if (dispatch !== null) {
-            console.log(typeof dispatch);
-            dispatch({ type: 'deleted', payload: bookId });
-        }
+        dispatch !== null && dispatch({ type: 'deleted', payload: bookId });
     }
 
     return (

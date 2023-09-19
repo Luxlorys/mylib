@@ -11,10 +11,10 @@ export default function DeleteButton({book, onDelete}: {book: Book, onDelete: Re
         <Modal closeOnOverlayClick={false} isOpen={isOpen} onClose={onClose}>
           <ModalOverlay />
           <ModalContent>
-            <ModalHeader>Delete {book.title} book?</ModalHeader>
+            <ModalHeader>Are you sure?</ModalHeader>
             <ModalCloseButton />
             <ModalBody pb={6}>
-              
+             Delete {book.title} book?
             </ModalBody>
   
             <ModalFooter>
