@@ -1,15 +1,15 @@
-import { useContext } from "react";
-import { BookContext } from "../BookContext";
 import Footer from "../components/Footer";
 import BookCardChakra from "../components/BookCardChakra";
 import { ChakraProvider } from "@chakra-ui/react";
 import Navbar from "../components/NavbarChakra";
 import "bootstrap/dist/css/bootstrap.css";
 import { Book } from "../models/Book";
+import { useBooks } from "../BookContext";
 
 
 export default function Finished() {
-  const books = useContext(BookContext).books;
+  const books = useBooks();
+
   return (
     <ChakraProvider>
     <div className="container">

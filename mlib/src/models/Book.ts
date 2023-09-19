@@ -1,7 +1,7 @@
 export type Book = {
     id: number;
     title: string;
-    desctiption: string;
+    description: string;
     priority: number;
     finished: boolean;
     date: Date;
@@ -12,7 +12,7 @@ export let initialBooks: Book[] = [
     {
         id: 1,
         title: 'Book-1',
-        desctiption: 'description description description',
+        description: 'description description description',
         priority: 1,
         finished: true,
         date: new Date(),
@@ -21,7 +21,7 @@ export let initialBooks: Book[] = [
     {
         id: 2,
         title: 'Book-2',
-        desctiption: 'description description description',
+        description: 'description description description',
         priority: 2,
         finished: false,
         date: new Date(),
@@ -30,7 +30,7 @@ export let initialBooks: Book[] = [
     {
         id: 3,
         title: 'Book-3',
-        desctiption: 'description description description',
+        description: 'description description description',
         priority: 1,
         finished: true,
         date: new Date(),
@@ -39,7 +39,7 @@ export let initialBooks: Book[] = [
     {
         id: 4,
         title: 'Book-4',
-        desctiption: 'description description description',
+        description: 'description description description',
         priority: 2,
         finished: false,
         date: new Date(),
@@ -48,7 +48,7 @@ export let initialBooks: Book[] = [
     {
         id: 5,
         title: 'Silent patient',
-        desctiption: 'description description description',
+        description: 'description description description',
         priority: 1,
         finished: true,
         date: new Date(),

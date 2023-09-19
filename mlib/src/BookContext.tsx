@@ -1,14 +1,15 @@
 import { Dispatch, ReactNode, createContext, useContext, useReducer } from "react";
 import { Book, initialBooks } from "./models/Book";
 
-export const BookContext = createContext<{ books: Book[] }>({ books: initialBooks });
-export const BookDispatcherContext = createContext<Dispatch<Actions>>(() => {});
+
+const BookContext = createContext<{ books: Book[] }>({ books: initialBooks });
+const BookDispatcherContext = createContext<Dispatch<Actions>>(() => {});
 
 interface Props {
     children: ReactNode
 }
 
-export type Actions =
+type Actions =
   | { type: "added"; payload: Book }
   | { type: "deleted"; payload: number };
 
@@ -16,15 +17,14 @@ type State = {
   books: Book[];
 };
 
-export default function BooksProvider(props: Props) {
+export default function BooksProvider({ children }: Props) {
     
     const initialBooksState = { books: initialBooks };
-    const [booksState, dispatcher] = useReducer(reducer, initialBooksState);
-    const { children } = props;
+    const [booksState, dispatch] = useReducer(reducer, initialBooksState);
 
     return (
         <BookContext.Provider value={{ books: booksState.books }}>
-          <BookDispatcherContext.Provider value={dispatcher}>
+          <BookDispatcherContext.Provider value={dispatch}>
             { children }
           </BookDispatcherContext.Provider>
         </BookContext.Provider>
@@ -32,7 +32,7 @@ export default function BooksProvider(props: Props) {
 }
 
 export function useBooks() {
-  return useContext(BookContext);
+  return useContext(BookContext).books;
 }
 
 export function useDispatcher() {
@@ -47,6 +47,7 @@ function reducer(state: State, action: Actions) {
     case "deleted":
       return { ...state, books: state.books.filter(book => book.id !== action.payload) };
     default:
+      console.log('nothing');
       return state;
   }
 } 

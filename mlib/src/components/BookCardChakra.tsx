@@ -13,16 +13,22 @@ import {
 } from "@chakra-ui/react";
 
 import { Book } from "../models/Book";
-import { useContext } from "react";
-import { BookDispatcherContext } from "../BookContext";
+import { useDispatcher } from "../BookContext";
 
-export default function BookCardChakra({ book }: { book: Book }) {
-    const dispatcher = useContext(BookDispatcherContext);
+interface Props {
+    book: Book
+}
 
+export default function BookCardChakra({book}: Props) {
+    const dispatch = useDispatcher();
+    
     const handleDeleteButton = (bookId: number) => {
-        console.log('clicked on id ' + book.id);
-        console.log(dispatcher);
-        dispatcher({type: 'deleted', payload: bookId});
+        console.log('clicked on id ' + bookId);    
+        console.log(dispatch);
+        if (dispatch !== null) {
+            console.log(typeof dispatch);
+            dispatch({ type: 'deleted', payload: bookId });
+        }
     }
 
     return (

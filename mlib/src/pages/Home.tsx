@@ -1,5 +1,4 @@
-import { useContext } from "react";
-import { BookContext } from "../BookContext";
+import { useBooks } from "../BookContext";
 import { ChakraProvider } from "@chakra-ui/react";
 import { Book } from "../models/Book";
 
@@ -10,7 +9,7 @@ import "bootstrap/dist/css/bootstrap.css";
 
 
 export default function Home() {
-  const booksContext = useContext(BookContext);
+  const booksContext = useBooks();
   
   return (
     <ChakraProvider>
@@ -18,7 +17,7 @@ export default function Home() {
         <Navbar />
         <h1 className="text-center">To read</h1>
         <div className="row row-cols-1 row-cols-md-3 g-4"  style={{marginTop: '5px'}}>
-          {booksContext.books
+          {booksContext
             .filter((book: Book) => !book.finished)
             .map((book: Book) => (
               <BookCardChakra book={book} key={book.id}/>
