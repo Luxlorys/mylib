@@ -1,5 +1,5 @@
 import Footer from "../components/Footer";
-import BookCardChakra from "../components/BookCardChakra";
+import BookCard from "../components/BookCard";
 import { ChakraProvider, SimpleGrid } from "@chakra-ui/react";
 import Navbar from "../components/NavbarChakra";
 import "bootstrap/dist/css/bootstrap.css";
@@ -19,7 +19,7 @@ export default function Finished() {
           {books
             .filter((book: Book) => book.finished)
             .map((book: Book) => (
-              <BookCardChakra book={book} key={book.id}/>
+              <BookCard book={book} key={book.id}/>
             ))}
           </SimpleGrid>
       <Footer />

@@ -14,12 +14,13 @@ import {
 
 import { Book } from "../models/Book";
 import { useDispatcher } from "../BookContext";
+import DeleteButton from "./DeleteBook";
 
 interface Props {
     book: Book
 }
 
-export default function BookCardChakra({book}: Props) {
+export default function BookCard({book}: Props) {
     const dispatch = useDispatcher();
     
     const handleDeleteButton = (bookId: number) => {
@@ -32,7 +33,7 @@ export default function BookCardChakra({book}: Props) {
     }
 
     return (
-    <Card maxW="300px">
+    <Card maxW="300px" bg='gray.100'>
         <CardBody>
         <Center>
         <Image
@@ -52,7 +53,7 @@ export default function BookCardChakra({book}: Props) {
         <CardFooter>
         <ButtonGroup spacing="2">
             <Button variant="solid" colorScheme="blue"> Show more </Button>
-            <Button variant="ghost" colorScheme="blue" onClick={() => handleDeleteButton(book.id)}> Delete</Button>
+            <DeleteButton book={book} onDelete={() => handleDeleteButton(book.id)}/>
         </ButtonGroup>
         </CardFooter>
     </Card>
