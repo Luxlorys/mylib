@@ -37,6 +37,7 @@ export default function BookCardChakra({book}: Props) {
         <Center>
         <Image
             src={book.img}
+            minW='150px'
             maxW='150px'
             alt="Green double couch with wooden legs"
             borderRadius="lg"

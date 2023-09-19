@@ -1,5 +1,5 @@
 import { useBooks } from "../BookContext";
-import { ChakraProvider } from "@chakra-ui/react";
+import { ChakraProvider, SimpleGrid } from "@chakra-ui/react";
 import { Book } from "../models/Book";
 
 import Footer from "../components/Footer";
@@ -9,20 +9,20 @@ import "bootstrap/dist/css/bootstrap.css";
 
 
 export default function Home() {
-  const booksContext = useBooks();
+  const books = useBooks();
   
   return (
     <ChakraProvider>
       <div className="container">
         <Navbar />
         <h1 className="text-center">To read</h1>
-        <div className="row row-cols-1 row-cols-md-3 g-4"  style={{marginTop: '5px'}}>
-          {booksContext
+          <SimpleGrid spacing={4} templateColumns='repeat(auto-fill, minmax(300px, 1fr))'>
+          {books
             .filter((book: Book) => !book.finished)
             .map((book: Book) => (
               <BookCardChakra book={book} key={book.id}/>
             ))}
-        </div>
+          </SimpleGrid>
         <Footer />
       </div>
     </ChakraProvider>
