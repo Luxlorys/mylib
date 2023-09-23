@@ -11,7 +11,7 @@ interface Props {
 
 type Actions =
   | { type: "added"; payload: Book }
-  | { type: "deleted"; payload: number };
+  | { type: "deleted"; payload: string };
 
 type State = {
   books: Book[];

@@ -1,5 +1,7 @@
+import { v4 as uuid } from "uuid";
+
 export type Book = {
-    id: number;
+    id: string;
     title: string;
     description: string;
     priority: 'high' | 'medium' | 'low';
@@ -10,7 +12,7 @@ export type Book = {
 
 export let initialBooks: Book[] = [
     {
-        id: 1,
+        id: uuid(),
         title: 'Book-1',
         description: 'description description description',
         priority: 'high',
@@ -19,7 +21,7 @@ export let initialBooks: Book[] = [
         img: 'https://content2.rozetka.com.ua/goods/images/big/232768606.jpg',
     },
     {
-        id: 2,
+        id: uuid(),
         title: 'Book-2',
         description: 'description description description',
         priority: 'low',
@@ -28,7 +30,7 @@ export let initialBooks: Book[] = [
         img: 'https://content2.rozetka.com.ua/goods/images/big/232768606.jpg',
     },
     {
-        id: 3,
+        id: uuid(),
         title: 'Book-3',
         description: 'description description description',
         priority: 'medium',
@@ -37,7 +39,7 @@ export let initialBooks: Book[] = [
         img: 'https://content2.rozetka.com.ua/goods/images/big/232768606.jpg',
     },
     {
-        id: 4,
+        id: uuid(),
         title: 'Book-4',
         description: 'description description description',
         priority: 'low',
@@ -46,7 +48,7 @@ export let initialBooks: Book[] = [
         img: 'https://content2.rozetka.com.ua/goods/images/big/232768606.jpg',
     },
     {
-        id: 5,
+        id: uuid(),
         title: 'Silent patient',
         description: 'description description description',
         priority: 'low',

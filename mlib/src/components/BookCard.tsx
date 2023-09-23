@@ -23,7 +23,7 @@ interface Props {
 export default function BookCard({book}: Props) {
     const dispatch = useDispatcher();
     
-    const handleDeleteButton = (bookId: number) => {
+    const handleDeleteButton = (bookId: string) => {
         dispatch !== null && dispatch({ type: 'deleted', payload: bookId });
     }
 

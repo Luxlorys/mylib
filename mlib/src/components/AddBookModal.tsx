@@ -17,6 +17,7 @@ import {
 import { createRef } from "react";
 import { Book } from "../models/Book";
 import { useDispatcher } from "../BookContext";
+import { v4 as uuid } from "uuid";
 
 
 export default function BookModal() {
@@ -36,7 +37,7 @@ export default function BookModal() {
     const img = imgRef.current?.value || '';
 
     return {
-      id: Math.random(),
+      id: uuid(),
       title,
       description,
       priority,
