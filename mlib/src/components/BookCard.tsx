@@ -15,6 +15,7 @@ import {
 import { Book } from "../models/Book";
 import { useDispatcher } from "../BookContext";
 import DeleteButton from "./DeleteBook";
+import ShowMoreButton from "./ShowMoreButton";
 
 interface Props {
     book: Book
@@ -47,7 +48,7 @@ export default function BookCard({book}: Props) {
         <Divider />
         <CardFooter>
         <ButtonGroup spacing="2">
-            <Button variant="solid" colorScheme="blue"> Show more </Button>
+            <ShowMoreButton book={book} />
             <DeleteButton book={book} onDelete={() => handleDeleteButton(book.id)}/>
         </ButtonGroup>
         </CardFooter>
