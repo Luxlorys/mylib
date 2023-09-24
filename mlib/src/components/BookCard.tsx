@@ -1,5 +1,4 @@
 import {
-  Button,
   ButtonGroup,
   Card,
   CardBody,
@@ -28,6 +27,17 @@ export default function BookCard({book}: Props) {
         dispatch !== null && dispatch({ type: 'deleted', payload: bookId });
     }
 
+        const iconLink = (priority: 'low' | 'medium' | 'high') => {
+        switch (priority) {
+            case 'high':
+                return require('../assets/icons/high.png');
+            case 'medium':
+                return require('../assets/icons/medium.png');
+            case 'low':
+                return require('../assets/icons/low.png');
+        }
+    }
+
     return (
     <Card maxW="300px" bg='gray.100'>
         <CardBody>
@@ -41,8 +51,12 @@ export default function BookCard({book}: Props) {
         />
         </Center>
         <Stack mt="6" spacing="3">
+            <Center>
             <Heading size="md">{book.title}</Heading>
-            <Text>Priority: {book.priority}</Text>
+            </Center>
+            <Center>
+            <Image maxW={50} src={iconLink(book.priority)} alt="priority_icon"/>
+            </Center>
         </Stack>
         </CardBody>
         <Divider />

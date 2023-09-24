@@ -66,7 +66,7 @@ export default function Navbar() {
               spacing={4}
               display={{ base: "none", md: "flex" }}
             >
-              <NavLink link="/">Home</NavLink>
+              <NavLink link="/">Home </NavLink>
               <NavLink link="/finished">Finished</NavLink>
             </HStack>
           </HStack>
